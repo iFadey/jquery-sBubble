@@ -1,0 +1,145 @@
+.sBubble {
+    border: 1px solid;
+    border-radius: 6px;
+    color: #eee;
+    font-size: .9em;
+    padding: 5px 8px;
+    text-align: center;
+    text-shadow: 0px 1px 1px #000;
+}
+.sBubbleArw {
+    content: "";
+    height: 0;
+    width: 0;
+}
+.sBubbleArw.top {
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid transparent;
+}
+.sBubbleArw.right {
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 8px solid transparent;
+}
+.sBubbleArw.left {
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 8px solid transparent;
+}
+.sBubbleArw.bottom {
+    border-bottom: 8px solid transparent;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+}
+.sBubble,
+.sBubbleArw {
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+    -ms-transition: all .2s;
+    transition: all .2s;
+    position: absolute;
+    opacity: 0;
+    z-index: 5;
+}
+.sBubble.top,
+.sBubbleArw.top {
+    margin: -10px 0 0 0;
+}
+.sBubble.right,
+.sBubbleArw.right {
+    margin: 0 0 0 10px;
+}
+.sBubble.left,
+.sBubbleArw.left {
+    margin: 0 0 0 -10px;
+}
+.sBubble.bottom,
+.sBubbleArw.bottom {
+    margin: 10px 0 0 0;
+}
+.sBubble.visible, .sBubbleArw.visible {
+    margin: 0;
+    opacity: 1;
+}
+
+
+/*** sBubble Black Theme ***/
+.sBubble.black {
+    background: #555;
+    border-color: #333;
+    box-shadow: 0 0 12px #666, inset 0 0 30px #222;
+}
+.sBubbleArw.top.black {
+    border-top-color: #333;
+}
+.sBubbleArw.bottom.black {
+    border-bottom-color: #333;
+}
+.sBubbleArw.left.black {
+    border-left-color: #333;
+}
+.sBubbleArw.right.black {
+    border-right-color: #333;
+}
+
+
+/*** sBubble Orange Theme ***/
+.sBubble.orange {
+    background: #FF4C00;
+    border-color: #CC3300;
+    box-shadow: 0 0 12px #666, inset 0 0 30px #D83900;
+}
+.sBubbleArw.top.orange {
+    border-top-color: #CC3300;
+}
+.sBubbleArw.bottom.orange {
+    border-bottom-color: #CC3300;
+}
+.sBubbleArw.left.orange {
+    border-left-color: #CC3300;
+}
+.sBubbleArw.right.orange {
+    border-right-color: #CC3300;
+}
+
+
+/*** sBubble Blue Theme ***/
+.sBubble.blue {
+    background: #0089C9;
+    border-color: #006899;
+    box-shadow: 0 0 12px #666, inset 0 0 30px #007DB7;
+}
+.sBubbleArw.top.blue {
+    border-top-color: #007DB7;
+}
+.sBubbleArw.bottom.blue {
+    border-bottom-color: #006899;
+}
+.sBubbleArw.left.blue {
+    border-left-color: #007DB7;
+}
+.sBubbleArw.right.blue {
+    border-right-color: #007DB7;
+}
+
+
+/*** sBubble Green Theme ***/
+.sBubble.green {
+    background: #00BA53;
+    border-color: #00893D;
+    box-shadow: 0 0 12px #666, inset 0 0 30px #00A048;
+}
+.sBubbleArw.top.green {
+    border-top-color: #00893D;
+}
+.sBubbleArw.bottom.green {
+    border-bottom-color: #00893D;
+}
+.sBubbleArw.left.green {
+    border-left-color: #00893D;
+}
+.sBubbleArw.right.green {
+    border-right-color: #00893D;
+}

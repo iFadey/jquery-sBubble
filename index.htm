@@ -1,0 +1,94 @@
+<!doctype html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>sBubble Test</title>
+
+    <style>
+        body {
+            font-family: Ubuntu, sans-serif;
+            font-size: 14px;
+        }
+
+        a {
+            color: #666;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+
+        #bk-lnk {
+            background: #444;
+            color: #eee;
+            font-size: 1.1em;
+            padding: 4px 6px;
+            text-decoration: none;
+        }
+        #bk-lnk:hover {
+            background: none;
+            color: #444;
+        }
+
+        #box {
+            background: #f4f4f4;
+            color: #ccc;
+            height: 24px;
+            line-height: 20px;
+            padding: 4px 6px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -12px 0 0 -83px;
+            width: 166px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="css/jquery.sBubble-0.1.0.css" />
+</head>
+
+<body>
+
+    <div id="box">
+        <a id="top" href="#">Top</a> |
+        <a id="right" href="#">Right</a> |
+        <a id="bottom" href="#">Bottom</a> |
+        <a id="left" href="#">Left</a>
+    </div>
+
+<script src="js/jquery-1.8.0.min.js"></script>
+<script src="js/jquery.sBubble-0.1.0.js"></script>
+<script>
+    $('#top').sBubble({
+        content: 'Tooltip on Top',
+        height: 19,
+        width: 100
+    });
+
+    $('#right').sBubble({
+        content: 'Tooltip on Right',
+        position: 'right',
+        height: 19,
+        width: 100,
+        theme: 'orange'
+    });
+
+    $('#bottom').sBubble({
+        content: 'Tooltip on Bottom',
+        position: 'bottom',
+        height: 19,
+        width: 110,
+        theme: 'blue'
+    });
+
+    $('#left').sBubble({
+        content: 'Tooltip on Left',
+        position: 'left',
+        height: 19,
+        width: 100,
+        theme: 'green'
+    });
+</script>
+
+</body>
+</html>
