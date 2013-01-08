@@ -12,7 +12,9 @@
 
         $(window).resize(function () {
             clearTimeout(setPosTimeout);
-            setPosTimeout = setTimeout(self.setPosition, 100);
+            setPosTimeout = setTimeout(function () {
+                self.setPosition();
+            }, 100);
         });
 
 
