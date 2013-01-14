@@ -1,3 +1,10 @@
+/**
+ *  jQuery sBubble Plugin v0.1.1
+ *
+ *  Author   : Fawad Hassan
+ *  Home Page: http://www.ifadey.com/2013/01/sbubble-jquery-css3-tooltip-plugin/
+ *  GitHub   : https://github.com/iFadey/jquery-sBubble
+ */
 (function ($) {
     var Bubble = function (elm, options) {
         var self = this,
