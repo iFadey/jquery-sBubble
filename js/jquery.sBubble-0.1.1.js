@@ -10,13 +10,15 @@
         self.$arw = $('<div class="sBubbleArw"> </div>').addClass(options.position + ' ' + options.theme);
 
 
-        $(window).resize(function () {
+        function rePosition() {
             clearTimeout(setPosTimeout);
             setPosTimeout = setTimeout(function () {
                 self.setPosition();
             }, 100);
-        });
+        }
 
+        $(window).resize(rePosition);
+        $('html *').scroll(rePosition);
 
         self.$box.css({
                 display: 'none',
@@ -58,26 +60,9 @@
     }; //end Bubble
 
 
-    Bubble.prototype.getPos = function (obj) {
-        var curleft = curtop = 0;
-
-        if (obj.offsetParent) {
-            do {
-                curleft += obj.offsetLeft;
-                curtop += obj.offsetTop;
-            } while (obj = obj.offsetParent);
-        }
-
-        return {
-            left: curleft,
-            top: curtop
-        };
-    }; //end getPos
-
-
     Bubble.prototype.getBoxArwPos = function () {
         var self = this,
-            elmPos = self.getPos(self.$elm[0]),
+            elmPos = self.$elm.offset(),
             pos = {
                 top    : self.opts.topOffset,
                 arwTop : 0,
@@ -147,6 +132,10 @@
             theme      : 'black'
         }, options);
 
+        options.width = typeof options.width === 'string' ? parseInt(options.width, 10) : options.width;
+        options.height = typeof options.height === 'string' ? parseInt(options.height, 10) : options.height;
+        options.leftOffset = typeof options.leftOffset === 'string' ? parseInt(options.leftOffset, 10) : options.leftOffset;
+        options.topOffset = typeof options.topOffset === 'string' ? parseInt(options.topOffset, 10) : options.topOffset;
 
         return this.each(function () {
             (new Bubble(this, options));

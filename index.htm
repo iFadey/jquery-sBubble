@@ -44,7 +44,7 @@
         }
     </style>
 
-    <link rel="stylesheet" href="css/jquery.sBubble-0.1.0.css" />
+    <link rel="stylesheet" href="css/jquery.sBubble-0.1.1.css" />
 </head>
 
 <body>
@@ -57,12 +57,18 @@
     </div>
 
 <script src="js/jquery-1.8.0.min.js"></script>
-<script src="js/jquery.sBubble-0.1.0.js"></script>
+<script src="js/jquery.sBubble-0.1.1.js"></script>
 <script>
+    /**
+     *  width, height, topOffset, leftOffset
+     *  all of above options can passed as string or integers
+     *  For example: '100px' or 100
+     */
+
     $('#top').sBubble({
         content: 'Tooltip on Top',
-        height: 19,
-        width: 100
+        height: '19px',
+        width: '100px'
     });
 
     $('#right').sBubble({
