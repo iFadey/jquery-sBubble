@@ -66,6 +66,12 @@
 
     }; //end Bubble
 
+    Bubble.prototype.destroy = function () {
+        var self = this;
+        self.$box.remove();
+        self.$arw.remove();
+        self.$elm.off('mouseenter mouseleave');
+    };
 
     Bubble.prototype.getBoxArwPos = function () {
         var self = this,
@@ -145,7 +151,14 @@
         options.topOffset = typeof options.topOffset === 'string' ? parseInt(options.topOffset, 10) : options.topOffset;
 
         return this.each(function () {
-            (new Bubble(this, options));
+            var plugin = $.data(this, "plugin_sbubble");
+            if (!plugin) {
+                $.data(this, "plugin_sbubble", new Bubble( this, options ));
+            }
+            else {
+                plugin.destroy();
+                $.data(this, "plugin_sbubble", new Bubble( this, options ));
+            }
         });
 
 
