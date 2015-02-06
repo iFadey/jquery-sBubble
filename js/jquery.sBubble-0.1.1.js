@@ -42,6 +42,32 @@
         //position the tooltip
         self.setPosition();
 
+        if ( options.onready ){
+
+            $delay = options.delay || 1000;
+        
+            self.$elm.ready(
+                function () {
+                    self.$box.css('display', 'block');
+                    self.$arw.css('display', 'block');
+
+                    // delay to show it.
+                    setTimeout(function () {
+                        self.$box.addClass('visible');
+                        self.$arw.addClass('visible');
+                        
+                        // remove after a period of time if option "time" set
+                        if ( options.time ){
+                            setTimeout(function () {
+                                self.$box.removeClass('visible');
+                                self.$arw.removeClass('visible');
+                            }, options.time );
+                        }
+                        
+                    }, $delay );
+                }
+            );
+        }
 
         self.$elm.hover(
             function () {
