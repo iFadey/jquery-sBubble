@@ -115,6 +115,8 @@
             arwOuterHeight = self.$arw.outerHeight(),
             arwOuterWidth = self.$arw.outerWidth();
 
+        $distance = self.opts.distance || 0;
+
         if (self.opts.position === 'top' || self.opts.position === 'bottom') {
             pos.left += elmPos.left + (elmOuterWidth - boxOuterWidth) / 2;
             pos.arwLeft = pos.left + (boxOuterWidth - arwOuterWidth) / 2;
@@ -126,16 +128,16 @@
         }
 
         if (self.opts.position === 'top') {
-            pos.top += elmPos.top - boxOuterHeight - arwOuterHeight;
+            pos.top += elmPos.top - boxOuterHeight - arwOuterHeight - $distance;
             pos.arwTop = pos.top + boxOuterHeight;
         } else if (self.opts.position === 'bottom') {
-            pos.top += elmPos.top + elmOuterHeight + arwOuterHeight;
+            pos.top += elmPos.top + elmOuterHeight + arwOuterHeight + $distance;
             pos.arwTop = pos.top - arwOuterHeight;
         } else if (self.opts.position === 'left') {
-            pos.left += elmPos.left - boxOuterWidth - arwOuterWidth;
+            pos.left += elmPos.left - boxOuterWidth - arwOuterWidth - $distance;
             pos.arwLeft = pos.left + boxOuterWidth;
         } else if (self.opts.position === 'right') {
-            pos.left += elmPos.left + elmOuterWidth + arwOuterWidth;
+            pos.left += elmPos.left + elmOuterWidth + arwOuterWidth + $distance;
             pos.arwLeft = pos.left - arwOuterWidth;
         }
 
