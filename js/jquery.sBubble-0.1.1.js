@@ -43,9 +43,7 @@
         self.setPosition();
 
         if ( options.onready ){
-
-            $delay = options.delay || 1000;
-        
+         
             self.$elm.ready(
                 function () {
                     self.$box.css('display', 'block');
@@ -64,7 +62,7 @@
                             }, options.time );
                         }
                         
-                    }, $delay );
+                    }, options.delay || 1000 );
                 }
             );
         }
