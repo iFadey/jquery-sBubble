@@ -40,7 +40,7 @@
             left: 50%;
             top: 50%;
             margin: -12px 0 0 -83px;
-            width: 166px;
+            width: 244px;
         }
     </style>
 
@@ -54,6 +54,7 @@
         <a id="right" href="#">Right</a> |
         <a id="bottom" href="#">Bottom</a> |
         <a id="left" href="#">Left</a>
+        <a id="whenready" href="#">When ready</a>
     </div>
 
 <script src="js/jquery-1.8.0.min.js"></script>
@@ -80,11 +81,12 @@
     });
 
     $('#bottom').sBubble({
-        content: 'Tooltip on Bottom',
+        content: 'Tooltip on Bottom with distance',
         position: 'bottom',
-        height: 19,
+        height: 27,
         width: 110,
-        theme: 'blue'
+        theme: 'blue',
+        distance: 10
     });
 
     $('#left').sBubble({
@@ -94,7 +96,19 @@
         width: 100,
         theme: 'green'
     });
-</script>
+
+    $('#whenready').sBubble({
+        content: 'Tooltip when ready',
+        position: 'right',
+        height: 19,
+        width: 120,
+        theme: 'green',
+        onready: 1,
+        delay: 1000,
+        time:  4000,
+    });
+
+    </script>
 
 </body>
 </html>
